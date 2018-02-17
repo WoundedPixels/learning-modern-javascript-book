@@ -1,3 +1,12 @@
-# First Chapter
+# Chapter Constants and Variables at a Glance
 
-GitBook allows you to organize your book into chapters, each chapter is stored in a separate file like this one.
+const name = 'fred';
+
+name = 'ted'; // Nope!
+
+let height = 100;
+
+height = 110; // Yup!
+
+There are two common ways to store values in JavaScript - const and let. You can't change your mind with const. Current common practice is to favor const and use let only when not using it makes your code unwieldy.
+
