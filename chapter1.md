@@ -42,7 +42,7 @@ JavaScript has six fundamental data types. They are the lowest level most elemen
 
 If you want to know the type of a variable, use the typeof operator as in typeof\(name\).
 
-## Truth and Truthyness
+## Truth and Decisions
 
 The name of the data type for holding all sorts of verdicts is boolean.
 
@@ -58,13 +58,11 @@ The name of the data type for holding all sorts of verdicts is boolean.
 
 `if (chargeExtra) {`
 
-`  doSomethingGreedy();`
+`doSomethingGreedy();`
 
 `}`
 
-
-
-For no clear reason, we charge more if people are big and tall or rich. Or both. 
+For no clear reason, we charge more if people are big and tall or rich. Or both.
 
 Building complex conditionals from a series of simple conditionals keeps allows the reader to get the big idea first and then fill in the details as needed. Consider the alternative:
 
@@ -72,7 +70,7 @@ Building complex conditionals from a series of simple conditionals keeps allows 
 
 `doSomethingGreedy();`
 
-`}` 
+`}`
 
 ### Strings
 
@@ -94,7 +92,6 @@ Six data types that are
 
 :
 
-* [Boolean](https://developer.mozilla.org/en-US/docs/Glossary/Boolean)
 * [Null](https://developer.mozilla.org/en-US/docs/Glossary/Null)
 * [Undefined](https://developer.mozilla.org/en-US/docs/Glossary/Undefined)
 * [Number](https://developer.mozilla.org/en-US/docs/Glossary/Number)
