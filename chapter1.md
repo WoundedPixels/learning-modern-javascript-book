@@ -4,7 +4,7 @@ So,  use const. It keeps everything simple and makes debugging easier.
 
 `const name = 'fred';`
 
-`const message = 'Hi ' + name + '!'; `
+`const message = 'Hi ' + name + '!';`
 
 `console.log('message', message);`
 
@@ -22,7 +22,7 @@ Sometimes you need let, but not often. Make up your mind!
 
 There are two common ways to store values in JavaScript - const and let. You can't change your mind with const. Current common practice is to favor const and use let only when the alternative makes your code unwieldy.
 
-## Name Things Well 
+## Name Things Well
 
 A little effort goes a long way and your future self will thank you as will the other fine professionals who read your code! Decent names also allow you to comment for context or to explain assumptions and exceptions. Stick to your guns on this - line by line comments are inefficient and potentially dangerous. If you want high quality and readable code then keep it small and name things well!
 
@@ -34,7 +34,7 @@ Most languages have well defined conventions for naming everything. JavaScript i
 
 `const radius = 2;`
 
-`const areaOfCircle = PI * radius * radius; `
+`const areaOfCircle = PI * radius * radius;`
 
 ## Primitive Data Types
 
@@ -46,13 +46,37 @@ If you want to know the type of a variable, use the typeof operator as in typeof
 
 The name of the data type for holding all sorts of verdicts is boolean.
 
-const height = 60;
+`const height = 60;`
 
-const bobIsTall = \(height &gt; 72\);
+`const tall = (height > 72);`
+
+`const big = (weight > 200);`
+
+`const rich = (income > 500000);`
+
+`const chargeExtra = ( (big && tall) || rich);`
+
+`if (chargeExtra) {`
+
+`  doSomethingGreedy();`
+
+`}`
+
+
+
+For no clear reason, we charge more if people are big and tall or rich. Or both. 
+
+Building complex conditionals from a series of simple conditionals keeps allows the reader to get the big idea first and then fill in the details as needed. Consider the alternative:
+
+`if ((weight > 200 && height > 72) || income > 500000) {`
+
+`doSomethingGreedy();`
+
+`}` 
 
 ### Strings
 
-JavaScript has really nice strings! 
+JavaScript has really nice strings!
 
 QQQ unicode, interpolation, multiline QQQ
 
@@ -63,8 +87,6 @@ QQQ unicode, interpolation, multiline QQQ
 ### Symbols
 
 Type Coercion
-
-
 
 Six data types that are
 
