@@ -102,9 +102,9 @@ JavaScript has really nice strings!
 QQQ unicode, interpolation, multiline QQQ
 
 ### Known Unknowns
-In many cases you know what you are missing. By the time you are done processing user input you know which fields were not entered. Information that is deleted may leave a known unknown.
+In many cases you know what you are missing. By the time you are done processing user input you know which fields were not entered. Information that is deleted may leave a known unknown. Think of it as an explicit indication that we do not know something.
 
-The right type for known unknowns is null as in:
+The right data type in this case is null as in:
 ```JavaScript
 const firstName = 'fred';
 const middleName = null;
@@ -112,6 +112,11 @@ const middleName = null;
 
 ### Unknown Unknowns
 In other cases there is no explicit decision that a variable is not known. This may mean that a mistake has been made or that the processing just hasn't happened yet.
+
+```JavaScript
+const firstName = 'fred';
+typeof(frstName) // undefined
+```
 
 ### Symbols
 
