@@ -102,25 +102,26 @@ JavaScript has really nice strings!
 QQQ unicode, interpolation, multiline QQQ
 
 ### Known Unknowns
+In many cases you know what you are missing. By the time you are done processing user input you know which fields were not entered. Information that is deleted may leave a known unknown.
+
+The right type for known unknowns is null as in:
+```JavaScript
+const firstName = 'fred';
+const middleName = null;
+```
 
 ### Unknown Unknowns
+In other cases there is no explicit decision that a variable is not known. This may mean that a mistake has been made or that the processing just hasn't happened yet.
 
 ### Symbols
 
-Type Coercion
+For more information, including mention of the sixth primitive, Symbol, see:
 
-Six data types that are
+[https://developer.mozilla.org/en-US/docs/Glossary/Primitive](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)
 
-[primitives](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)
+### Type Coercion
 
-:
 
-* [Null](https://developer.mozilla.org/en-US/docs/Glossary/Null)
-* [Undefined](https://developer.mozilla.org/en-US/docs/Glossary/Undefined)
-* [Number](https://developer.mozilla.org/en-US/docs/Glossary/Number)
-* [String](https://developer.mozilla.org/en-US/docs/Glossary/String)
-* [Symbol](https://developer.mozilla.org/en-US/docs/Glossary/Symbol)
-  \(new in ECMAScript 6\)
 
 
 
