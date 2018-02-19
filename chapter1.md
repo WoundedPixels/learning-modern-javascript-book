@@ -1,26 +1,67 @@
-# Chapter Constants and Variables at a Glance
+# Chapter - Shaping Data
 
-So,  use const. It keeps everything simple and makes debugging easier.
+Developers spend a lot of time working with different kinds of data. Somehow it never starts the way it needs to be and we get to combine, extrapolate and generally twist it into a useful form.
+
+## Holding Data
+
+Of course you need a way to hold data. Modern JavaScript takes a firm different stance on holding data - most data is not allowed to change. This takes two forms, constant assignment to immutable primitives and constant assignment to mutable complex things.
+
+### Immutable Primitives
+First, low level or primitive data is immutable, which is a fancy way of saying that it cannot be changed. You can create a new string from a string, perhaps by converting it to uppercase, but the original string lives on. Same for numbers.
+
+### Constant Assignment
+You indicate that you will not change the assignment of data to a name through the const keyword. In the following snippet, once the data 'fred' is assigned to the data named firstName it is fixed until the code finishes. 
 
 ```JavaScript
-const name = 'fred';
-const message = 'Hi ' + name + '!';
+const firstName = 'fred';
+const message = 'Hi ' + firstName + '!'; 
 console.log('message', message);
+
+const shouting = message.toUpperCase();
+console.log('message', message);
+console.log('shouting', shouting);
 ```
-[https://es6console.com/jdrq67hu/](https://es6console.com/jdrq67hu/)
+[https://es6console.com/jdtgv7kw/](https://es6console.com/jdtgv7kw/)
 
-You just can't change a value once it is assigned.
+You just can't change a primitive once it is created and you can't reassign a const. So, primitive data that is held in a const is really, really going to stay put.
 
-`name = 'ted'; // Nope!`
+```JavaScript
+message = shouting; // Nope!
+```
 
-Sometimes you need to change values, but not as often as you might think. Make up your mind!
-
-But if you do need to, just use let:
+### Non-Constant Assignment
+Sometimes you need to change the value that a name refers to. To indicate that a piece of data can change, use the keyword let:
 
 ```JavaScript
 let height = 100;`
 height = 110; // Yup!
 ```
+
+> The default way to hold data in JavaScript is const. It is generally worth the effort but it is also worth understanding why this best practice exists. Once you get the fundamentals, google 'javascript immutable const let var' and settle in for a bit. Down with Dogma!
+
+### Mutable Complex Things
+There is more to data in JavaScript than strings and numbers and other primitives. Specifically, there are arrays and objects. For now, let's just stay focused on mutability and assignment - a complex thing can be changed after it is created. But you can't change which complex thing a name refers to. So awkward to say, perhaps it is easier to see?
+
+```JavaScript
+const fred = {
+  name: 'fred',
+  height: 50,
+};
+
+console.log('fred', fred);
+fred.height = 55;
+console.log('fred', fred);
+
+const sally = {
+  name: 'sally',
+  height: 54,
+}
+```
+https://es6console.com/jdthokhd/
+
+Fred can get taller, but thanks to the constant assignment he must continue to be the same object.
+
+fred = sally; // Nope! 
 
 There are two common ways to store values in JavaScript - const and let. You can't change your mind with const. Current common practice is to favor const and use let only when the alternative makes your code unwieldy.
 
