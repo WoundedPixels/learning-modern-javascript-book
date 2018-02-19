@@ -71,7 +71,6 @@ true &#124;&#124; false| true
 false &#124;&#124; true| true
 false &#124;&#124; false | false
 
-
 The fun starts when we combine small decisions into larger decisions and take different action.
 
 ```JavaScript
@@ -112,7 +111,11 @@ Of course you would never fat finger a cut and paste like that... And you would 
 
 JavaScript has really nice strings!
 
-TBD unicode, interpolation, multiline TBD
+TBD unicode, interpolation, multiline TBD, comparisons
+
+### Numbers
+
+TBD - sizes, types, comparisons
 
 ### Admitting Ignorance
 In many cases you know what you are missing. By the time you are done processing user input you know which fields were not entered. Information that is deleted may leave a gap in data. You need a way to clearly indicate that we do not know something.
@@ -133,6 +136,9 @@ The undefined data type serves this purpose in JavaScript.
 const firstName = 'fred';
 typeof(frstName) // undefined
 ```
+### Comparisons and Coercion
+TBD - truthy, etc
+
 ### Related Resources
 For more information, including coverage of the sixth primitive, Symbol, see:
 
