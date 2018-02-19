@@ -5,8 +5,6 @@ Developers spend a lot of time working with different kinds of data. Somehow it 
 Much of a developers life is spend building more and more complicated data from primitive chunks. The next few sections cover how data can be assigned and combined.
 
 ## Holding Data (Short Version)
-First, the simple version to get us started. There is a longer section on this topic at the end of the chapter.
-
 Data is assigned using the const keyword:
 ```JavaScript
 const firstName = 'fred';
@@ -14,6 +12,8 @@ const message = 'Hi ' + firstName + '!';
 ```
 
 In this case, two strings are created and message holds 'Hi fred!'.
+
+There is a longer section on this topic at the end of the chapter.
 
 ## Name Things Well
 As you shape data you may need to keep track of a lot of pieces. A little effort on naming goes a long way and your future self will thank you! Also, the other fine professionals who read your code appreciate your efforts! 
@@ -43,7 +43,7 @@ JavaScript has six fundamental data types. They are the most elemental values th
 
 If you want to know the type of a variable, use the typeof operator as in typeof\(name\).
 
-## Truth and Decisions
+### Truth and Consequences
 
 The name of the data type for holding all sorts of verdicts is boolean.
 
@@ -57,7 +57,7 @@ We are assigning true to tall when height is over 72 and assigning false otherwi
 const tall = height > 72;
 ```
 
-### Combining booleans
+#### Combining booleans
 && means and. It resolves to true if the left and right sides are both true.
 || means or. It resolves to true if either the left side or the right side are true. It also resolves to true if both are true.
 
@@ -71,6 +71,7 @@ true &#124;&#124; false| true
 false &#124;&#124; true| true
 false &#124;&#124; false | false
 
+#### Building Blocks vs Long Conditionals
 The fun starts when we combine small decisions into larger decisions and take different action.
 
 ```JavaScript
@@ -80,7 +81,7 @@ const rich = (income > 500000);
 const chargeExtra = ( (big && tall) || rich);
 ```
 
-Read this as make chargeExtra true if people are both big and tall or rich. In any case tall, big, rich, and chargeExtra are booleans. 
+Read this as make chargeExtra true when both big and tall or rich. In any case tall, big, rich, and chargeExtra are booleans. 
 
 Building complex conditionals from a series of simple conditionals allows the reader to get the big idea first and then fill in the details as needed. Consider the alternative:
 
@@ -108,14 +109,60 @@ if (weight > 20 || height > 72) {
 Of course you would never fat finger a cut and paste like that... And you would totally see the mistake at a glance...
 
 ### Strings
-
 JavaScript has really nice strings!
 
 TBD unicode, interpolation, multiline TBD, comparisons
 
 ### Numbers
+JavaScript has a coder friendly approach to numbers. All of them, regardless of their mathematical type, are of type number.
 
-TBD - sizes, types, comparisons
+```JavaScript
+typeof(1.5)   // number
+typeof(1/3)   // number
+typeof(-1000) // number
+```
+#### Converting Strings to Numbers
+JavaScript has two conversion functions that get a lot of use:
+
+```JavaScript
+parseInt('12', 10) // 12
+parseFloat('12.5')   // 12.5
+```
+
+> Warning
+> The second argument to parseInt is the base which almost always defaults to 10. Every so often leaving it off hurts. A lot.
+> ```JavaScript
+parseInt('012', 10)  // Always 12 so do this
+parseInt('012')      // Probably 12 but might be 10
+parseInt('012', 8)   // Always 10
+parseInt('0x12')     // Always 18
+parseInt('0x12', 16) // Always 18 and the reader remembers why
+```
+
+#### Converting Numbers to Strings
+
+#### Comparing Numbers
+All of the normal comparisons are available to you:
+Comparison   | Result
+-------------|-------
+3 < 4        | true
+4 <= 4       | true
+4 === 4      | true
+
+> Note: Why triple equals?
+Because
+Because == is quirky, useful and sometimes dangerous
+Comparison   | Result
+-------------|-------
+1 == false   | false
+1 == true    | true ?!?!
+0 == false   | true
+0 == true    | false
+
+
+
+#### 
+TBD - sizes
 
 ### Admitting Ignorance
 In many cases you know what you are missing. By the time you are done processing user input you know which fields were not entered. Information that is deleted may leave a gap in data. You need a way to clearly indicate that we do not know something.
