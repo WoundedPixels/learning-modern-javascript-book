@@ -6,6 +6,8 @@ Developers spend a lot of time working with different kinds of data. Somehow it 
 
 Of course you need a way to hold data. Modern JavaScript takes a firm different stance on holding data - most data is not allowed to change. This takes two forms, constant assignment to immutable primitives and constant assignment to mutable complex things.
 
+> It is so not as bad as it sounds... Maybe just ignore my words and take a look at the examples. Then come back to the words. 
+
 ### Immutable Primitives
 First, low level or primitive data is immutable, which is a fancy way of saying that it cannot be changed. You can create a new string from a string, perhaps by converting it to uppercase, but the original string lives on. Same for numbers.
 
