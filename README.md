@@ -13,7 +13,7 @@ This book is for beginner to novice programmers. So, it leaves a lot out. This b
 
 This book uses modern language features that are in most but not all browsers. Not to worry, some seriously smart people have made it reasonably easy for the rest of us to get the cool parts of JavaScript to run pretty much anywhere.
 
-When explaining code, the book uses [es6console](https://es6console.com)so you can experiment with the sample code.
+When explaining code, the book uses [es6console](https://es6console.com) so you can experiment with the sample code.
 
 
 
