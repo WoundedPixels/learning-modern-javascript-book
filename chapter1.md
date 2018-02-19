@@ -66,10 +66,10 @@ Combination  | Result
 true && true   | true
 true && false  | false
 false && true  | false
-true \|\| true | true
-true \|\| false| true
-false \|\| true| true
-false \|\| false | false
+true &#124;&#124; true | true
+true &#124;&#124; false| true
+false &#124;&#124; true| true
+false &#124;&#124; false | false
 
 
 The fun starts when we combine small decisions into larger decisions and take different action.
