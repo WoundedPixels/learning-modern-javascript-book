@@ -137,6 +137,9 @@ For more information, including coverage of the sixth primitive, Symbol, see:
 
 [https://developer.mozilla.org/en-US/docs/Glossary/Primitive](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)
 
+## Complex Data Types
+TBD
+
 ## Holding Data (More of the Story) 
 Of course you need a way to hold data. Modern JavaScript takes a firm different stance on holding data - most data is not allowed to change. This takes two forms, constant assignment to immutable primitives and constant assignment to mutable complex things.
 
