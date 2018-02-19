@@ -114,13 +114,14 @@ JavaScript has really nice strings!
 
 TBD unicode, interpolation, multiline TBD
 
-### Known Unknowns
-In many cases you know what you are missing. By the time you are done processing user input you know which fields were not entered. Information that is deleted may leave a known unknown. You need a way to clearly indicate that we do not know something.
+### Admitting Ignorance
+In many cases you know what you are missing. By the time you are done processing user input you know which fields were not entered. Information that is deleted may leave a gap in data. You need a way to clearly indicate that we do not know something.
 
 The right data type in this case is null as in:
 ```JavaScript
 const firstName = 'fred';
 const middleName = null;
+const lastName = 'stone';
 ```
 
 ### Unknown Unknowns
