@@ -2,8 +2,142 @@
 
 Developers spend a lot of time working with different kinds of data. Somehow it never starts the way it needs to be and we get to combine, extrapolate and generally twist it into a useful form.
 
-## Holding Data
+Much of a developers life is spend building more and more complicated data from primitive chunks. The next few sections cover how data can be assigned and combined.
 
+## Holding Data (Short Version)
+First, the simple version to get us started. There is a longer section on this topic at the end of the chapter.
+
+Data is assigned using the const keyword:
+```JavaScript
+const firstName = 'fred';
+const message = 'Hi ' + firstName + '!'; 
+```
+
+In this case, two strings are created and message holds 'Hi fred!'.
+
+## Name Things Well
+As you shape data you may need to keep track of a lot of pieces. A little effort on naming goes a long way and your future self will thank you! Also, the other fine professionals who read your code appreciate your efforts! 
+
+But what makes a good name? You will have to develop your own style, but here are some starting points:
+* Spell it out - abbreviations may save some keystrokes but they are often confusing
+* Name things from the reader's perspective - choose a name that will make sense to the next hire, not you while you are immersed in the code or even the seasoned veteran in the next cube
+* Be specific - maxAge is better than max unless the context is just a few lines long
+* Avoid single character names - making the next person search for 'i' and 'j' is only funny if they aren't you
+* You usually don't need to include the type of a variable in the name - maxAgeNumber is a bit silly
+* Unless it really helps you - like distinguishing between helpText and helpDiv  
+
+Decent names also allow you to limit your comments to adding context or explaining assumptions and exceptions. Stick to your guns on this - line by line comments are inefficient and get dangerous as they age. If you want high quality and readable code then keep your functions and files small and name things well! Comments should explain odd things, not illuminate overly terse lines.
+
+### Consistency
+
+Most languages have well defined conventions for naming everything. JavaScript is probably a little less standardized than most languages, but we agree on a few things. Use camelCase for most data assignments. Use all UPPERCASE for real world constants.
+
+```JavaScript
+const PI = 3.14;
+const radius = 2;
+const areaOfCircle = PI * radius * radius;
+```
+## Primitive Data Types
+
+JavaScript has six fundamental data types. They are the most elemental values that you use to build everything else.
+
+If you want to know the type of a variable, use the typeof operator as in typeof\(name\).
+
+## Truth and Decisions
+
+The name of the data type for holding all sorts of verdicts is boolean.
+
+```JavaScript
+const tall = (height > 72);
+```
+We are assigning true to tall when height is over 72 and assigning false otherwise. The parentheses are completely optional.
+
+```JavaScript
+// Just as good. You be You.
+const tall = height > 72;
+```
+
+### Combining booleans
+&& means and. It resolves to true if the left and right sides are both true.
+|| means or. It resolves to true if either the left side or the right side are true. It also resolves to true if both are true.
+
+Combination  | Result
+-------------|-------
+true && true   | true
+true && false  | false
+false && true  | false
+true \|\| true | true
+true \|\| false| true
+false \|\| true| true
+false \|\| false | false
+
+
+The fun starts when we combine small decisions into larger decisions and take different action.
+
+```JavaScript
+const tall = (height > 72);
+const big = (weight > 200);
+const rich = (income > 500000);
+const chargeExtra = ( (big && tall) || rich);
+```
+
+Read this as make chargeExtra true if people are both big and tall or rich. In any case tall, big, rich, and chargeExtra are booleans. 
+
+Building complex conditionals from a series of simple conditionals allows the reader to get the big idea first and then fill in the details as needed. Consider the alternative:
+
+```JavaScript
+if ((weight > 200 && height > 72) || income > 500000) {
+  doSomethingGreedy();
+}
+```
+
+While this saves a lot of lines it gets confusing for real world logic. Also you will often need the same simple conditional later.
+
+```JavaScript
+if (big || tall) {
+  provideBigSeat();
+}
+```
+
+This really looks good compared to:
+```JavaScript
+if (weight > 20 || height > 72) {
+  provideBigSeat();
+}
+```
+
+Of course you would never fat finger a cut and paste like that... And you would totally see the mistake at a glance...
+
+### Strings
+
+JavaScript has really nice strings!
+
+TBD unicode, interpolation, multiline TBD
+
+### Known Unknowns
+In many cases you know what you are missing. By the time you are done processing user input you know which fields were not entered. Information that is deleted may leave a known unknown. You need a way to clearly indicate that we do not know something.
+
+The right data type in this case is null as in:
+```JavaScript
+const firstName = 'fred';
+const middleName = null;
+```
+
+### Unknown Unknowns
+In other cases there is no explicit decision that data is not known. This may mean that a mistake has been made or that the processing just hasn't happened yet.
+
+The undefined data type serves this purpose in JavaScript.
+
+```JavaScript
+const firstName = 'fred';
+typeof(frstName) // undefined
+```
+### Related Resources
+For more information, including coverage of the sixth primitive, Symbol, see:
+
+[https://developer.mozilla.org/en-US/docs/Glossary/Primitive](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)
+
+## Holding Data (More of the Story) 
 Of course you need a way to hold data. Modern JavaScript takes a firm different stance on holding data - most data is not allowed to change. This takes two forms, constant assignment to immutable primitives and constant assignment to mutable complex things.
 
 > It is so not as bad as it sounds... Maybe just ignore my words and take a look at the examples. Then come back to the words. 
@@ -67,107 +201,9 @@ fred = sally; // Nope!
 
 There are two common ways to store values in JavaScript - const and let. You can't change your mind with const. Current common practice is to favor const and use let only when the alternative makes your code unwieldy.
 
-## Name Things Well
-
-A little effort goes a long way and your future self will thank you! Also, the other fine professionals who read your code appreciate your efforts! 
-
-But what makes a good name for a variable? You will have to develop your own style, but here are some starting points:
-* Spell it out - abbreviations may save some keystrokes but they are often confusing
-* Name things from the reader's perspective - choose a name that will make sense to the next hire, not you while you are immersed in the code or even the seasoned veteran in the next cube
-* Be specific - maxAge is better than max unless the scope of the variable is just a few lines
-* You usually don't need to include the type of a variable in the name - maxAgeNumber is a bit silly
-* Unless it helps you - like distinguishing between helpText and helpDiv
-
-Decent names also allow you to limit your comments to adding context or explaining assumptions and exceptions. Stick to your guns on this - line by line comments are inefficient and get dangerous as they age. If you want high quality and readable code then keep your files small and name things well! Comments should explain odd things, not illuminate overly terse lines.
-
-### Consistency
-
-Most languages have well defined conventions for naming everything. JavaScript is probably a little less standardized than most languages, but we agree on a few things. Use camelCase for variables and general purpose constants. Use all UPPERCASE for real world constants.
-
-```JavaScript
-const PI = 3.14;
-const radius = 2;
-const areaOfCircle = PI * radius * radius;
-```
-
-## Primitive Data Types
-
-JavaScript has six fundamental data types. They are the lowest level most elemental values that you use to build everything else.
-
-If you want to know the type of a variable, use the typeof operator as in typeof\(name\).
-
-## Truth and Decisions
-
-The name of the data type for holding all sorts of verdicts is boolean.
-
-```JavaScript
-const tall = (height > 72);
-const big = (weight > 200);
-const rich = (income > 500000);
-const chargeExtra = ( (big && tall) || rich);
-
-if (chargeExtra) {
-  doSomethingGreedy();`
-}
-```
-
-Read that as charge extra if people are both big and tall or rich. In any case tall, big, rich, and chargeExtra are booleans. 
-
-Building complex conditionals from a series of simple conditionals allows the reader to get the big idea first and then fill in the details as needed. Consider the alternative:
-
-```JavaScript
-if ((weight > 200 && height > 72) || income > 500000) {
-  doSomethingGreedy();
-}
-```
-
-While this saves a lot of lines it gets confusing for real world logic. Also you will often need the same simple conditional later.
-
-```JavaScript
-if (big || tall) {
-  provideBigSeat();
-}
-```
-
-This really looks good compared to:
-```JavaScript
-if (weight > 20 || height > 72) {
-  provideBigSeat();
-}
-```
-
-Of course you would never fat finger a cut and paste like that... And you would totally see the mistake at a glance...
-
-### Strings
-
-JavaScript has really nice strings!
-
-QQQ unicode, interpolation, multiline QQQ
-
-### Known Unknowns
-In many cases you know what you are missing. By the time you are done processing user input you know which fields were not entered. Information that is deleted may leave a known unknown. Think of it as an explicit indication that we do not know something.
-
-The right data type in this case is null as in:
-```JavaScript
-const firstName = 'fred';
-const middleName = null;
-```
-
-### Unknown Unknowns
-In other cases there is no explicit decision that a variable is not known. This may mean that a mistake has been made or that the processing just hasn't happened yet.
-
-```JavaScript
-const firstName = 'fred';
-typeof(frstName) // undefined
-```
-
-### Symbols
-
-For more information, including mention of the sixth primitive, Symbol, see:
-
-[https://developer.mozilla.org/en-US/docs/Glossary/Primitive](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)
-
-### Type Coercion
+## Type Conversion
+TBD
+Here or elsewhere?
 
 
 
