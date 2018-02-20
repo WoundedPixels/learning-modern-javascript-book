@@ -57,7 +57,7 @@ We are assigning true to tall when height is over 72 and assigning false otherwi
 const tall = height > 72;
 ```
 
-#### Combining booleans
+#### Combining Booleans
 && means and. It resolves to true if the left and right sides are both true.
 || means or. It resolves to true if either the left side or the right side are true. It also resolves to true if both are true.
 
@@ -81,7 +81,7 @@ const rich = (income > 500000);
 const chargeExtra = ( (big && tall) || rich);
 ```
 
-Read this as make chargeExtra true when both big and tall or rich. In any case tall, big, rich, and chargeExtra are booleans. 
+Read this as make chargeExtra true when both big and tall or rich. 
 
 Building complex conditionals from a series of simple conditionals allows the reader to get the big idea first and then fill in the details as needed. Consider the alternative:
 
@@ -91,7 +91,7 @@ if ((weight > 200 && height > 72) || income > 500000) {
 }
 ```
 
-While this saves a lot of lines it gets confusing for real world logic. Also you will often need the same simple conditional later.
+While this saves a lot of lines, it gets confusing as your  logic gets more 'interesting'. Also you will often need the same simple conditional later.
 
 ```JavaScript
 if (big || tall) {
@@ -114,44 +114,41 @@ JavaScript has really nice strings!
 TBD unicode, interpolation, multiline TBD, comparisons
 
 ### Numbers
-JavaScript has a coder friendly approach to numbers. All of them, regardless of their mathematical type, are of type number.
+JavaScript has a very coder friendly approach to numbers. All of them, regardless of their mathematical type, are of type number.
 
 ```JavaScript
-typeof(1.5)   // number
-typeof(1/3)   // number
-typeof(-1000) // number
+typeof(1.5);   // number
+typeof(1/3);   // number
+typeof(-1000); // number
 ```
 #### Converting Strings to Numbers
 JavaScript has two conversion functions that get a lot of use:
 
 ```JavaScript
-parseInt('12', 10) // 12
-parseFloat('12.5')   // 12.5
+parseInt('12', 10);  // 12
+parseFloat('12.5');   // 12.5
 ```
 
 > Warning
-> The second argument to parseInt is the base which almost always defaults to 10. Every so often leaving it off hurts. A lot.
-> ```JavaScript
-parseInt('012', 10)  // Always 12 so do this
-parseInt('012')      // Probably 12 but might be 10
-parseInt('012', 8)   // Always 10
-parseInt('0x12')     // Always 18
-parseInt('0x12', 16) // Always 18 and the reader remembers why
-```
+> The second argument to parseInt is the base which almost always defaults to 10. Every so often leaving it off hurts. A lot. 
 
-#### Converting Numbers to Strings
+```JavaScript
+parseInt('012', 10);  // Always 12 so do this
+parseInt('012');      // Probably 12 but might be 10
+parseInt('012', 8);   // Always 10 and the reader remembers why
+parseInt('0x12');     // Always 18
+parseInt('0x12', 16); // Always 18 and the reader remembers why
+```
 
 #### Comparing Numbers
 All of the normal comparisons are available to you:
-Comparison   | Result
--------------|-------
-3 < 4        | true
-4 <= 4       | true
-4 === 4      | true
-
+```JavaScript
+const tall = (height >= 72);
+const exactlySixFoot = (height === 72);
+```
 > Note: Why triple equals?
-Because
-Because == is quirky, useful and sometimes dangerous
+Because triple equals checks that the left and right side are both the same type and also the same value. Double equals does not which makes it quirky, sometimes useful and sometimes dangerous.
+
 Comparison   | Result
 -------------|-------
 1 == false   | false
