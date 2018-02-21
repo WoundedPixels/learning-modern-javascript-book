@@ -59,13 +59,17 @@ const tall = height > 72;
 
 #### Combining Booleans
 && means and. It resolves to true if the left and right sides are both true.
-|| means or. It resolves to true if either the left side or the right side are true. It also resolves to true if both are true.
 
 Combination  | Result
 -------------|-------
 true && true   | true
 true && false  | false
 false && true  | false
+
+|| means or. It resolves to true if either the left side or the right side are true. It also resolves to true if both are true.
+
+Combination  | Result
+-------------|-------
 true &#124;&#124; true | true
 true &#124;&#124; false| true
 false &#124;&#124; true| true
@@ -111,7 +115,57 @@ Of course you would never fat finger a cut and paste like that... And you would 
 ### Strings
 JavaScript has really nice strings!
 
-TBD unicode, interpolation, multiline TBD, comparisons
+A few of my favorite things include seamless support for special characters, graceful solutions for most quoting problems, and built in interpolation.    
+
+#### Special Characters
+In JavaScript, this just works:
+```JavaScript
+console.log('中文 español English हिन्दी العربية ...');
+```
+#### Quotes
+In many cases you just start and stop the string with the one you don't need.
+```JavaScript
+console.log('Hi, have a "happy day"');
+console.log("Hi, have a 'happy day'");
+```
+Sometimes you can't so you have to escape with a slash:
+```JavaScript
+console.log('Then Jane said, "How is Sally\'s dog?');
+```
+> Modern JavaScript favors single quotes. It seems kinda arbitrary, but there are some arguable advantages:
+* Pressing the shift key is tiring
+* JavaScript is often used to create HTML, which is usually full of double quotes
+
+#### Template Literals
+Interpolation or templating is what we do when we need to build a complex string from several pieces of data. In JavaScript this is done with template literals.
+ 
+```JavaScript
+const height = 60;
+const weight = 180;
+const name = 'Fred';
+const description = `${name} is ${60/12} feet tall and weighs ${weight} pounds.`;
+
+console.log('description', description);
+```
+> A template literal is enclosed in back-ticks to distinguish it from regular strings.
+
+Template literals can also be used to build multi-line strings:
+
+```JavaScript
+const summary = `
+${name}
+Height: ${height} inches
+Weight: ${weight} pounds
+`;
+
+console.log('summary', summary);
+```
+#### Related Resources
+Samples: [https://es6console.com/jdwhn24e/
+](https://es6console.com/jdwhn24e/)
+[More on Strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+[Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) 
+
 
 ### Numbers
 JavaScript has a very coder friendly approach to numbers. All of them, regardless of their mathematical type, are of type number.
@@ -152,17 +206,19 @@ Because triple equals checks that the left and right side are both the same type
 Comparison   | Result
 -------------|-------
 1 == false   | false
-1 == true    | true ?!?!
+1 == true    | true
 0 == false   | true
 0 == true    | false
+1 === true   | false
 
+#### Related Resources
+The details about numbers in JavaScript can be found at:
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
-
-#### 
-TBD - sizes
+For more information about manipulating numbers, see: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
 ### Admitting Ignorance
-In many cases you know what you are missing. By the time you are done processing user input you know which fields were not entered. Information that is deleted may leave a gap in data. You need a way to clearly indicate that we do not know something.
+In many cases you know what you are missing. By the time you are done processing user input you know which fields were not entered. Information that is deleted may leave a gap in data. You need a way to clearly indicate that we know that we do not know something.
 
 The right data type in this case is null as in:
 ```JavaScript
@@ -180,8 +236,6 @@ The undefined data type serves this purpose in JavaScript.
 const firstName = 'fred';
 typeof(frstName) // undefined
 ```
-### Comparisons and Coercion
-TBD - truthy, etc
 
 ### Related Resources
 For more information, including coverage of the sixth primitive, Symbol, see:
@@ -251,13 +305,16 @@ https://es6console.com/jdthokhd/
 
 Fred can get taller, but thanks to the constant assignment he must continue to be the same object.
 
+```JavaScript
 fred = sally; // Nope! 
+```
 
-There are two common ways to store values in JavaScript - const and let. You can't change your mind with const. Current common practice is to favor const and use let only when the alternative makes your code unwieldy.
-
-## Type Conversion
+## Providing Defaults
 TBD
-Here or elsewhere?
+
+## Conditional Assignment
+TBD
+
 
 
 
