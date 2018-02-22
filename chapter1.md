@@ -41,7 +41,7 @@ const areaOfCircle = PI * radius * radius;
 
 JavaScript has six fundamental data types. They are the most elemental values that you use to build everything else.
 
-If you want to know the type of a variable, use the typeof operator as in typeof\(name\).
+If you want to know the type of a piece of data, use the typeof operator as in typeof\(name\).
 
 ### Truth and Consequences
 
@@ -76,7 +76,7 @@ false &#124;&#124; true| true
 false &#124;&#124; false | false
 
 #### Building Blocks vs Long Conditionals
-The fun starts when we combine small decisions into larger decisions and take different action.
+The fun starts when we combine small decisions into larger decisions.
 
 ```JavaScript
 const tall = (height > 72);
@@ -97,16 +97,12 @@ const chargeExtra = ((weight > 200 && height > 72) || income > 500000);
 While this saves a lot of lines, it gets confusing as your  logic gets more 'interesting'. Also you will often need the same simple conditionals later.
 
 ```JavaScript
-if (big || tall) {
-  provideBigSeat();
-}
+const provideBigSeat = (big || tall);
 ```
 
 This really looks good compared to:
 ```JavaScript
-if (weight > 20 || height > 72) {
-  provideBigSeat();
-}
+const provideBigSeat = (weight > 20 || height > 72);
 ```
 
 Of course you would never fat finger a cut and paste like that... And you would totally see the mistake at a glance...
@@ -169,7 +165,10 @@ console.log('summary', summary);
 #### Related Resources
 Samples: [https://es6console.com/jdwhn24e/
 ](https://es6console.com/jdwhn24e/)
+
+JavaScript strings come complete with all sorts of behavior, including converting to uppercase, finding sub strings, splitting, combining, trimming, padding, folding, and spindling. Ok, maybe not the last two, but take a look:
 [MDN on Strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+
 [MDN on Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) 
 
 
