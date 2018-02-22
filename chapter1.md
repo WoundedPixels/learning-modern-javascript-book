@@ -219,9 +219,10 @@ Comparison   | Result
 
 #### Related Resources
 The details about numbers in JavaScript can be found at:
-[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
+[MDN on Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
-For more information about manipulating numbers, see: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+For more information about manipulating numbers, see:
+[MDN on Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
 ### Admitting Ignorance
 In many cases you know what you are missing. By the time you are done processing user input you know which fields were not entered. Information that is deleted may leave a gap in data. You need a way to clearly indicate that we know that we do not know something.
@@ -246,7 +247,7 @@ typeof(frstName) // undefined
 ### Related Resources
 For more information, including coverage of the sixth primitive, Symbol, see:
 
-[https://developer.mozilla.org/en-US/docs/Glossary/Primitive](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)
+[MDN on Primitives](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)
 
 ## Complex Data Types
 TBD
@@ -320,6 +321,14 @@ TBD
 
 ## Conditional Assignment
 TBD
+
+## Filter
+
+## Map
+
+## Reduce
+
+
 
 
 
