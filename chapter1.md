@@ -122,12 +122,13 @@ In JavaScript, this just works:
 console.log('中文 español English हिन्दी العربية ...');
 ```
 #### Quotes
-In many cases you just start and stop the string with the one you don't need.
+JavaScript lets you begin and end a string with your choice of a single or double quote. This is very handy as many strings include a quote or two. So, in many cases you just start and stop the string with the one you don't need.
+
 ```JavaScript
 console.log('Hi, have a "happy day" ');
 console.log("Hi, have a 'happy day' ");
 ```
-Sometimes you can't so you have to escape with a slash:
+Sometimes a string has some of each type so you have to escape with a slash:
 ```JavaScript
 console.log('Then Jane said, "How is Sally\'s dog?"');
 ```
@@ -168,8 +169,8 @@ console.log('summary', summary);
 #### Related Resources
 Samples: [https://es6console.com/jdwhn24e/
 ](https://es6console.com/jdwhn24e/)
-[More on Strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-[Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) 
+[MDN on Strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+[MDN on Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) 
 
 
 ### Numbers
