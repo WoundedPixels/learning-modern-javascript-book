@@ -90,12 +90,11 @@ Read this as make chargeExtra true when both big and tall or rich.
 Building complex conditionals from a series of simple conditionals allows the reader to get the big idea first and then fill in the details as needed. Consider the alternative:
 
 ```JavaScript
-if ((weight > 200 && height > 72) || income > 500000) {
-  doSomethingGreedy();
-}
+// don't do this!
+const chargeExtra = ((weight > 200 && height > 72) || income > 500000);
 ```
 
-While this saves a lot of lines, it gets confusing as your  logic gets more 'interesting'. Also you will often need the same simple conditional later.
+While this saves a lot of lines, it gets confusing as your  logic gets more 'interesting'. Also you will often need the same simple conditionals later.
 
 ```JavaScript
 if (big || tall) {
@@ -125,12 +124,12 @@ console.log('中文 español English हिन्दी العربية ...');
 #### Quotes
 In many cases you just start and stop the string with the one you don't need.
 ```JavaScript
-console.log('Hi, have a "happy day"');
-console.log("Hi, have a 'happy day'");
+console.log('Hi, have a "happy day" ');
+console.log("Hi, have a 'happy day' ");
 ```
 Sometimes you can't so you have to escape with a slash:
 ```JavaScript
-console.log('Then Jane said, "How is Sally\'s dog?');
+console.log('Then Jane said, "How is Sally\'s dog?"');
 ```
 > Modern JavaScript favors single quotes. It seems kinda arbitrary, but there are some arguable advantages:
 * Pressing the shift key is tiring
@@ -143,11 +142,17 @@ Interpolation or templating is what we do when we need to build a complex string
 const height = 60;
 const weight = 180;
 const name = 'Fred';
-const description = `${name} is ${60/12} feet tall and weighs ${weight} pounds.`;
+const description = `${name} is ${height/12} feet tall and weighs ${weight} pounds.`;
 
 console.log('description', description);
 ```
 > A template literal is enclosed in back-ticks to distinguish it from regular strings.
+
+You can put anything inside the curly braces
+```JavaScript
+const four = `${2+2}`;
+```
+> But maybe discretion is your friend... Try to build the complicated bits in consts and keep the template literals at a high level.
 
 Template literals can also be used to build multi-line strings:
 
