@@ -297,6 +297,13 @@ const theJonesFamily = [joe, sally];
 
 Objects can contain arrays
 ```JavaScript
+const fred = {
+  firstName: 'Fred',
+  lastName: 'Jones',
+  height: 41,
+  employed: false,
+};
+
 const sally = {
   firstName: 'Sally',
   lastName: 'Jones',
@@ -304,8 +311,9 @@ const sally = {
   employed: true,
   siblings: [joe, fred],
 };
-
 ```
+
+Pretty much any idea you can dream up can be captured in JavaScript. As you add complexity please consider the future readers, including your future self. Names matter! 
 
 ## Holding Data (More of the Story) 
 At the top of this chapter we blithely started using const with no explanation or justification. No we know enough to dig a little deeper.
