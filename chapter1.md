@@ -248,8 +248,64 @@ For more information, including coverage of the sixth primitive, Symbol, see:
 
 [MDN on Primitives](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)
 
-## Holding Complex Data
-To this point we have discussed simple and independent chunks of data. JavaScript allows you to combine related data into arbitrarily complicated structures.
+## More Complex Data
+To this point we have discussed simple and independent chunks of data. JavaScript allows you to combine related data into arbitrarily complicated structures, called objects. It also allows you to build lists of things, called arrays.
+
+### Objects
+Objects are often retrieved from databases or systems, but you can create them directly in JavaScript by enclosing a set of key / value pairs between curly braces.
+
+```JavaScript
+const joe = {
+  firstName: 'Joe',
+  lastName: 'Jones',
+  height: 60,
+  employed: true,
+};
+```
+
+An value within an object can be another object.
+
+```JavaScript
+const sally = {
+  firstName: 'Sally',
+  lastName: 'Jones',
+  height: 56,
+  employed: true,
+  sibling: joe,
+};
+```
+[https://es6console.com/je7ubdgs/](https://es6console.com/je7ubdgs/)
+
+### Arrays
+Arrays are created by enclosing things in straight brackets
+
+```JavaScript
+const somePrimes = [1,2,3,5,7];
+const names = ['fred', 'sally', 'joe'];
+```
+
+Arrays almost always hold similar things, but there is no rules against mixing things up.
+```JavaScript
+// Probably a terrible idea
+const things = [1,'fred',true];
+```
+
+Arrays often hold objects.
+```JavaScript
+const theJonesFamily = [joe, sally];
+```
+
+Objects can contain arrays
+```JavaScript
+const sally = {
+  firstName: 'Sally',
+  lastName: 'Jones',
+  height: 56,
+  employed: true,
+  siblings: [joe, fred],
+};
+
+```
 
 ## Holding Data (More of the Story) 
 At the top of this chapter we blithely started using const with no explanation or justification. No we know enough to dig a little deeper.
