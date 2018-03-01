@@ -163,8 +163,8 @@ Weight: ${weight} pounds
 console.log('summary', summary);
 ```
 #### Related Resources
-Samples: [https://es6console.com/jdwhn24e/
-](https://es6console.com/jdwhn24e/)
+Samples: [https://es6console.com/je7u1du6/
+](https://es6console.com/je7u1du6/)
 
 JavaScript strings come complete with all sorts of behavior, including converting to uppercase, finding sub strings, splitting, combining, trimming, padding, folding, and spindling. Ok, maybe not the last two, but take a look:
 [MDN on Strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
@@ -248,11 +248,13 @@ For more information, including coverage of the sixth primitive, Symbol, see:
 
 [MDN on Primitives](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)
 
-## Complex Data Types
-TBD
+## Holding Complex Data
+To this point we have discussed simple and independent chunks of data. JavaScript allows you to combine related data into arbitrarily complicated structures.
 
 ## Holding Data (More of the Story) 
-Of course you need a way to hold data. Modern JavaScript takes a firm different stance on holding data - most data is not allowed to change. This takes two forms, constant assignment to immutable primitives and constant assignment to mutable complex things.
+At the top of this chapter we blithely started using const with no explanation or justification. No we know enough to dig a little deeper.
+
+Modern JavaScript takes a firm different stance on holding data - most data is not allowed to change. This takes two forms, constant assignment to immutable primitives and constant assignment to mutable complex things.
 
 > It is so not as bad as it sounds... Maybe just ignore my words and take a look at the examples. Then come back to the words. 
 
@@ -290,7 +292,7 @@ height = 110; // Yup!
 > The default way to hold data in JavaScript is const. It is generally worth the effort but it is also worth understanding why this best practice exists. Once you get the fundamentals, google 'javascript immutable const let var' and settle in for a bit. Down with Dogma!
 
 ### Mutable Complex Things
-There is more to data in JavaScript than strings and numbers and other primitives. Specifically, there are arrays and objects. For now, let's just stay focused on mutability and assignment - a complex thing can be changed after it is created. But you can't change which complex thing a name refers to. So awkward to say, perhaps it is easier to see?
+There is more to data in JavaScript than strings and numbers and other primitives. Complex things, such as objects and arrays can be changed after they are created. But you can't change which complex thing a name refers to. So awkward to say, perhaps it is easier to see?
 
 ```JavaScript
 const fred = {
