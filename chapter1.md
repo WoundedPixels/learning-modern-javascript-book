@@ -290,6 +290,20 @@ Arrays almost always hold similar things, but there is no rules against mixing t
 const things = [1,'fred',true];
 ```
 
+#### Accessing Elements
+You get things out of an array by using the straight bracket and specifying an index. 
+
+> Note: JavaScript arrays start at zero.
+```JavaScript
+somePrimes[0] // 1
+somePrimes[1] // 2
+```
+
+#### Related Resources
+For more information, including ways to add to an array, see if an array contains an element, and much more, see:
+[MDN on Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) 
+
+### Mix and Match
 Arrays often hold objects.
 ```JavaScript
 const theJonesFamily = [joe, sally];
